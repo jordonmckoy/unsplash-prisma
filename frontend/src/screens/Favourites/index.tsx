@@ -30,7 +30,16 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
   },
-  photoCarousel: { display: "flex", flexWrap: "wrap" },
+  listTitle: {
+    display: "flex",
+    flexDirection: "column",
+    padding: "1rem 0",
+  },
+  photoCarousel: {
+    display: "flex",
+    flexWrap: "wrap",
+    backgroundColor: "#ecf4f9",
+  },
   photoCard: {
     margin: "1rem",
   },
@@ -94,32 +103,34 @@ const Favourites = () => {
             (collection: { name: string; description: string; id: number }) => (
               <>
                 <Box className={classes.collection}>
-                  <TextField
-                    id="collection-name"
-                    label="Name"
-                    className={classes.textInput}
-                    defaultValue={collection?.name}
-                    size="small"
-                    onChange={(e) =>
-                      onChange({
-                        id: collection?.id,
-                        name: e.target.value,
-                      })
-                    }
-                  />
-                  <TextField
-                    id="collection-description"
-                    label="Description"
-                    className={classes.textInput}
-                    defaultValue={collection?.description}
-                    size="small"
-                    onChange={(e) =>
-                      onChange({
-                        id: collection?.id,
-                        description: e.target.value,
-                      })
-                    }
-                  />
+                  <Box className={classes.listTitle}>
+                    <TextField
+                      id="collection-name"
+                      label="Name"
+                      className={classes.textInput}
+                      defaultValue={collection?.name}
+                      size="small"
+                      onChange={(e) =>
+                        onChange({
+                          id: collection?.id,
+                          name: e.target.value,
+                        })
+                      }
+                    />
+                    <TextField
+                      id="collection-description"
+                      label="Description"
+                      className={classes.textInput}
+                      defaultValue={collection?.description}
+                      size="small"
+                      onChange={(e) =>
+                        onChange({
+                          id: collection?.id,
+                          description: e.target.value,
+                        })
+                      }
+                    />
+                  </Box>
                   <Box className={classes.photoCarousel}>
                     {(favourites as any)?.[collection.id]?.map((photo: any) => (
                       <Box className={classes.photoCard}>
@@ -139,7 +150,7 @@ const Favourites = () => {
                       </Box>
                     ))}
                     {!(favourites as any)?.[collection.id]?.length && (
-                      <Typography variant="h5" component="h5">
+                      <Typography variant="body1" component="p">
                         List is currently empty.
                       </Typography>
                     )}
