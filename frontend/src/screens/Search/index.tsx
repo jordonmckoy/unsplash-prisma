@@ -39,7 +39,6 @@ const debouncedFetch = debounce(async (query, callback) => {
 const Search = () => {
   const classes = useStyles();
   const [collections, setCollections] = useState([]);
-  // eslint-disable-next-line
   const [favourites, setFavourites] = useState({});
   const [totalFavourites, setTotalFavourites] = useState(0);
   const [selectedPhoto, setSelectedPhoto] = useState({});

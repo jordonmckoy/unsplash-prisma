@@ -67,7 +67,7 @@ $ cd ../frontend && npm install && npm run start
 
 ## Design decisions
 
-I chose to use Prisma as an "ORM" layer to ease the interaction with the database and speed up API development. I find the schema is a nice way to
+I chose to use Prisma as an "ORM" layer to ease interactions with the database and speed up API development. I find the schema is a nice way to
 map to a mental model. CRA on the frontend felt like the best choice because I wasn't looking to build a static site (Gatsby) or one that needed
 to be Server side rendered (Next.js). A GraphQL API was something I was interested in implementing but I felt it really wasn't necessary for an
 application of this size so I opted to not use it. If I had, using something like Nexus (framework) or type-graphql could have been appropriate

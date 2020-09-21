@@ -1,4 +1,3 @@
-import { raw } from "body-parser";
 // Image CRUD operations
 import prisma from "../services/prisma";
 import {

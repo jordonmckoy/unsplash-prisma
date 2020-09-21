@@ -7,7 +7,6 @@ import {
 } from "../models/imageCollection";
 import {
   DeleteImageCollectionArgsType,
-  GetImageCollectionArgsType,
   UpdateImageCollectionArgsType,
 } from "../models/types";
 

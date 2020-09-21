@@ -1,7 +1,6 @@
 import Unsplash, { toJson } from "unsplash-js";
 import fetch from "node-fetch";
 import { SearchPhotosArgsType } from "./types";
-import { isDate } from "util";
 
 if (!(globalThis as any).fetch) {
   (globalThis as any).fetch = fetch;
