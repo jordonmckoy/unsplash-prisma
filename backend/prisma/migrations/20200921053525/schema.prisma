@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url = "***"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Audit {
+  id     Int    @default(autoincrement()) @id
+  action String
+}
+
+model Image {
+  id                Int              @default(autoincrement()) @id
+  ImageCollection   ImageCollection? @relation(fields: [imageCollectionId], references: [id])
+  imageCollectionId Int?
+  description       String?
+  portfolio         String?
+  raw               String
+  full              String
+  regular           String
+  small             String
+  thumb             String
+  unsplashId        String           @unique
+}
+
+model ImageCollection {
+  id          Int     @default(autoincrement()) @id
+  description String
+  name        String
+  images      Image[]
+}
