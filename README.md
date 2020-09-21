@@ -24,21 +24,31 @@ REACT_APP_API_BASE_URL=http://localhost:8000
 
 ### Start the services
 
-To provision the postgres db and server application run:
+To provision the postgres db:
 
-`$ docker-compose up --build` 
+```
+$ docker-compose up --build
+``` 
 
-### Apply schema to database
+### Apply prisma schema to the database
 
 ```
 $ cd backend && npx prisma migrate up --experimental
+```
+
+### Start the server
+
+```
+$ npm run dev
 ```
 
 ### Start the client
 
 In a new terminal run the following command to start the client:
 
-`$ cd ../frontend && npm install && npm run start`
+```
+$ cd ../frontend && npm install && npm run start
+```
 
 ## Architecture
 
@@ -77,4 +87,4 @@ Future improvements include:
 - Share lists with friends
 - Lazy loading
 - Error handling
-
+- Unlimited scroll/pagination
